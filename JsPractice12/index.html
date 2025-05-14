@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JsPractice 12</h1>
+    <p>finding out if 1st January will be a Sunday between <strong>2014</strong> and <strong>2050</strong></p>
+    <p id="input"></p>
+
+    <script>
+        let input = document.querySelector("#input");
+        for (i = 14; i <= 50; i++) {
+            date = new Date(`20${i}`)
+            day = date.getDay()
+            console.log(date);
+
+
+            if (date.getDay() === 0) {
+                
+                input.innerHTML += `1 jan will be a sunday on ${date.getFullYear()} <br/>`
+
+            }
+
+        }
+        </script>
+</body>
+</html>
