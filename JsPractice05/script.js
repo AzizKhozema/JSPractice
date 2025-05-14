@@ -12,8 +12,11 @@ let word = "w3resource";
 for (i = 0; word.length > i; i++){
     word = word.slice(-1)+ word.slice(0, -1) 
     console.log(word);
+    let dom = document.getElementById("for");
+    dom.innerHTML += `<div>${word}</div> ` ;
 
 }
+
 /* for infinite loop */
 // let word = "w3resource";
 // let original = word; // Save the original string
@@ -35,5 +38,6 @@ for (i = 0; word.length > i; i++){
 //         rotationCount = 0; // Reset the counter
 //     }
 // }, 1000); // Rotate every 1 second
+
 
 
