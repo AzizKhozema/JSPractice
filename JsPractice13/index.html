@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Js Practice 13</h1>
+    <p>Random Integer Guess Game</p>
+    <button onClick="Game()">start</button>
+    <p id='ans'></p>
+
+    <script>
+
+        
+        let input = document.querySelector("#ans");
+        
+        const Game = () => {
+        let ranNum = Math.floor((Math.random() * 10) + 1)
+        console.log(ranNum);
+
+        let number = Number(prompt("write any number","number"));
+        if (number === ranNum) {
+            input.innerHTML = `You Guessed the correct answer`
+        }
+
+        else{
+            input.innerHTML = `You Guessed the wrong answer`
+        }
+
+    }
+        
+
+    </script>
+</body>
+</html>

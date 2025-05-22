@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JsPractice15</title>
+
+    <style>
+      fieldset {
+        display: flex;
+        flex-direction: column;
+      }
+      input {
+        width: 100px;
+      }
+      .j {
+        width: 15px;
+      }
+      button {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Js Practice 15</h1>
+    <p>Multiplication and Division (User Input)</p>
+    <input id="num1" type="number" placeholder="1st Num" />
+    <input id="num2" type="number" placeholder="2nd Num" />
+    <div>
+      <input class="j" id="mul" type="radio" value="mul" name="cal" />
+      <label for="mul">Multiplication</label>
+    </div>
+    <div>
+      <input class="j" id="div j" type="radio" value="div" name="cal" />
+      <label for="div j">Division</label>
+    </div>
+
+    <button onclick="calculate()">Calculate</button>
+    <p class="input"></p>
+
+    <script>
+      num01 = document.querySelector("#num1");
+      num02 = document.querySelector("#num2");
+      input = document.querySelector(".input");
+      
+      function calculate() {
+          radios = document.getElementsByName("cal");
+          num1 = num01.value
+          num2 = num02.value
+
+        let cal = "";
+        let ans;
+        for (let radio of radios) {
+          if (radio.checked) {
+            cal = radio.value;
+            break;
+          }
+        }
+        console.log(num01.value, num02.value);
+          if (cal == "mul") {
+            ans = Number(num1 * num2);
+            console.log(ans);
+            input.innerHTML = ans;
+          } else if (cal == "div") {
+            ans = Number(num1 / num2);
+            console.log(ans);
+            input.innerHTML = ans;
+          }
+    
+          num01.value = "";
+          num02.value = "";
+          console.log("done")
+
+      }
+    </script>
+  </body>
+</html>

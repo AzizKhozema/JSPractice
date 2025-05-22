@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Practice 14</title>
+    <style>
+      div {
+        width: 200px;
+        height: 80px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Js Practice 14</h1>
+    <p>Days Left Before Christmas</p>
+    <div>
+      <p class="input"></p>
+    </div>
+
+    <script>
+      today = new Date();
+
+      var cmas = new Date(today.getFullYear(), 11, 25);
+
+      if (today.getMonth() == 11 && today.getDate() > 25) {
+        cmas.setFullYear(cmas.getFullYear() + 1);
+      }
+
+      var one_day = 1000 * 60 * 60 * 24;
+
+      
+       timeLeft = Math.ceil((cmas.getTime() - today.getTime()) / one_day) +
+          " days left until Christmas!"
+
+          input = document.querySelector(".input");
+          input.innerHTML = timeLeft;
+      
+    </script>
+  </body>
+</html>
