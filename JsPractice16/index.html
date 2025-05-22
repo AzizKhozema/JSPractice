@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JsPractice16</title>
+  </head>
+  <body>
+    <h1>Js Practice 16</h1>
+    <p>Convert Temperatures Between Celsius and Fahrenheit</p>
+    <input type="text" name="temp" id="temp" />
+    <label for="temp">Fahrenheit</label>
+    <br />
+    <br />
+    <button name="C" onclick="changeHandler()">Change to Celsius</button>
+    <p class="input"></p>
+
+    <script>
+      function changeHandler() {
+        data = document.querySelector("#temp");
+        temp = Number(data.value);
+        label = document.querySelector("label");
+        butn = document.querySelector("button");
+        input = document.querySelector(".input");
+        
+        if (!isNaN(temp) && temp === ""){
+        switch (butn.name) {
+          case "F":
+            butn.innerHTML = "Change to Celsius";
+            butn.setAttribute("name", "C");
+            label.textContent = "Fahrenhiet";
+            input.innerHTML = `Conversion of ${temp}\xB0C in Fahrenhiet is ${(temp * (9/5)) + 32}\xB0F. `;
+            break;
+
+          case "C":
+            butn.textContent = "Change to Fahrenhiet";
+            butn.setAttribute("name", "F");
+            label.textContent = "Celsius";
+            input.innerHTML = `Conversion of ${temp}\xB0F in Celsius is ${(temp - 32) * (5/9)}\xB0C. `;
+            break;
+        }}
+        else {
+            alert("Enter Valid Data")
+        }
+        console.log("first");
+        data.value = ""
+      }
+    </script>
+  </body>
+</html>
